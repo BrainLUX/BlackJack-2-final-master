@@ -6,4 +6,7 @@ package com.thunder;
 public abstract class Intellect {
 
     public abstract Command decide(int score) ;
+
+
+    public abstract int decidemoney(int current);
 }

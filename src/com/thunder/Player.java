@@ -35,4 +35,8 @@ public abstract class Player {
     }
 
 
+    public int coindecision() {
+
+        return intellect.decidemoney(money);
+    }
 }

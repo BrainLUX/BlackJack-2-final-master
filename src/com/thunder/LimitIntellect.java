@@ -1,5 +1,7 @@
 package com.thunder;
 
+import java.util.Random;
+
 /**
  * Created by student on 18.11.2016.
  */
@@ -20,5 +22,11 @@ public class LimitIntellect extends Intellect{
         else {
             return Command.STAND;
         }
+    }
+
+    @Override
+    public int decidemoney(int current) {
+        Random random = new Random();
+        return random.nextInt((current-1))+1;
     }
 }
