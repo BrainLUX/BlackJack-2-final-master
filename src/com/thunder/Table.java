@@ -58,8 +58,11 @@ public class Table {
                         break;
                     if (command == Command.HIT)
                         dealer.deal(player);
-                    if (command == Command.DOUBLE)
+                    if (command == Command.DOUBLE) {
                         deckmoney[players.indexOf(player)] *= 2;
+                        dealer.deal(player);
+                        break;
+                    }
                 }
             }
         }
@@ -101,10 +104,10 @@ public class Table {
                     if (player instanceof Human)
                         humans--;
                 }
-                System.out.println(player.name + " " + player.state + " with " + player.hand + " and get: " + (int) (deckmoney[players.indexOf(player)] * count));
-                player.hand.clear();
-            }
 
+            }
+            System.out.println(player.name + " " + player.state + " with " + player.hand + " and get: " + (int) (deckmoney[players.indexOf(player)] * count));
+            player.hand.clear();
         }
 
     }
@@ -113,9 +116,9 @@ public class Table {
         for (Player player : bankrots) {
             this.players.remove(player);
         }
-        if (humans == 0)
+        if (humans == 0) {
             System.exit(0);
-
+        }
         System.out.println();
         System.out.println("STARTING NEW GAME");
         System.out.println();
